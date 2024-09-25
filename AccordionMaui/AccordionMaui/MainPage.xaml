@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AccordionMaui"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Accordion;assembly=Syncfusion.Maui.Expander"
+             x:Class="AccordionMaui.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:ContactViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Behaviors>
+        <local:Behavior/>
+    </ContentPage.Behaviors>
+    
+    <ContentPage.Content>
+        <Grid x:Name="mainGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="HideOrShow" Text="Hide / Show item" />
+            <syncfusion:SfAccordion x:Name="Accordion"  Grid.Row="1" ExpandMode="MultipleOrNone" BindableLayout.ItemsSource="{Binding ContactsInfo}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <syncfusion:AccordionItem Margin="10" >
+                            <syncfusion:AccordionItem.Header>
+                                <Grid HeightRequest="50" >
+                                    <Label Text="{Binding ContactName}"/>
+                                </Grid>
+                            </syncfusion:AccordionItem.Header>
+                            <syncfusion:AccordionItem.Content>
+                                <Grid HeightRequest="50" Padding="10" >
+                                    <Label Text="{Binding CallTime}"/>
+                                </Grid>
+                            </syncfusion:AccordionItem.Content>
+                        </syncfusion:AccordionItem>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </syncfusion:SfAccordion>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
