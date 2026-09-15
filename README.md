@@ -1,5 +1,4 @@
-# how-to-show-or-hide-accordion-item-in-.net-maui-accordion
-
+# How to show or hide an Accordion item in a .NET MAUI Accordion?
 This sample shows how to show or hide an Accordion item in a .NET MAUI application using Syncfusion's SfAccordion control and BindableLayout. 
 
 ## Overview
@@ -16,7 +15,7 @@ Key points
 - Use a view model (for example `ContactViewModel`) exposing an observable collection such as `ObservableCollection<Contact>` or similar.
 - To show/hide items, update the collection (add/remove) or bind a visibility flag on the model and control the template generation in code-behind or with a converter.
 
-## XAML 
+### XAML 
 
 The snippet below is taken from the sample project's `MainPage.xaml`. It demonstrates binding the `SfAccordion` to a `ContactsInfo` collection on the page view-model and using a `DataTemplate` to produce each `AccordionItem`.
 
@@ -71,7 +70,7 @@ There are multiple ways to control which items are visible:
 - Use a property on the model: include a boolean such as `IsVisible` on your item model. Then use code-behind or a view-model to filter the collection (for example, expose a filtered view or a separate collection bound to the `SfAccordion`).
 - Conditional generation: in code-behind, when preparing items, you can skip creating items for which `IsVisible` is false.
 
-##### Conclusion
+## Conclusion
 
 I hope you enjoyed learning about how to show or hide accordion item in .NET MAUI Accordion(SfAccordion).
 
